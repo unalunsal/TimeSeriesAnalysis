@@ -1,28 +1,18 @@
 
-#install.packages("crayon", lib="C:/Users/unalu/Documents/R/win-library/3.5/library")
+library("quantmod")
+library("parallel")
+library("rugarch")
+library("datasets")
+library("crayon")
+library("forecast")
 
-library("DBI", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("dplyr", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("implyr", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("odbc", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("zoo", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("TTR", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("xts", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("quantmod", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("parallel", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("rugarch", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("datasets", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("crayon", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-library("forecast", lib.loc="C:/Users/unalu/Documents/R/win-library/3.5/library")
-
-
-#Define a function to delete NAs.There will be NAs in the retreived data from FROM
+#Define a function to delete NAs.There will be NAs in the retreived data 
 delete.na <- function(DF, n=0) {
   DF[rowSums(is.na(DF)) <= n,]
 }
 
-
-# Function that selects the optimum AR(p) and MA(q) parameters and the Integration (d).
+# Define another function that selects the optimum AR(p) and MA(q) parameters and the Integration (d)
+# based on Information Criterion (AIC or BIC).
 orderSelect <- function(df.train, infoCrea){
   final.ic = Inf
   final.order.ic = c(0,0,0)
@@ -41,12 +31,11 @@ orderSelect <- function(df.train, infoCrea){
 }
 
 
-
 # Function that calculates the out of sample recursive RMSE value.
-# SYMBOL: First Component of the function is the symbol for the time series data that will be retreived from the database SOURCE
+# SYMBOL: First Component of the function is the symbol for the time series data that will be retreived from the data source.
 # SOURCE: Second Component of the function which is the data source (ex; FRED, YAHOO)
-# testRatio: Third Component of the function which is the train set / test set ratio 
-# infoCrea: Information criteria that will be used to choose optimum lags for the ARIMA model
+# testRatio: Third Component of the function which is the train set / test set ratio
+# infoCrea: Information criteria that will be used to choose optimum lags for the ARIMA (p,d,q) model.
 #           (ex; AIC: Akaike Information Criteria or BIC: Bayesian Information Criteria)
 
 recursive <- function(SYMBOL, SOURCE,testRatio, infoCrea) {
