@@ -13,6 +13,7 @@ delete.na <- function(DF, n=0) {
 
 # Define another function that selects the optimum AR(p) and MA(q) parameters and the Integration (d)
 # based on Information Criterion (AIC or BIC).
+# This function will be called by the function below since I will be updating ARIMA(p,d,q) orders for each training sets.
 orderSelect <- function(df.train, infoCrea){
   final.ic = Inf
   final.order.ic = c(0,0,0)
