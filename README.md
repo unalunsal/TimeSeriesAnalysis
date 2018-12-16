@@ -2,7 +2,7 @@
 
 I am assuming you already have some background in regression analysis / econometrics with some R programming experience. 
 
-# arima.aic.R: 
+# arima.aic.R
 In this code, I will be forecasting recursive out of sample test set by using optimum ARIMA(p,d,q) orders while minimizing Akaike Information Criterion. 
 
 I determine the optimum order for the ARIMA(p,d,q) by minimizing Information Creterion from the traning set then I use the model to make a  forecast for one period ahead. For each period up to time t, I determine the orders of the ARIMA(p,d,q) with Information Creterion and use that model to forecast the observation at time t+1. This methodology is called recursive out of sample forecasting. 
