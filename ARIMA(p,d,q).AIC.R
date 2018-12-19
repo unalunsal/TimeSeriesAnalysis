@@ -56,7 +56,7 @@ recursive <- function(SYMBOL, SOURCE,testRatio, infoCrea) {
   return(rmse[2:length(rmse)])
 }
 
-rmse = recursive("DEXUSEU", "FRED", 0.999, AIC)
+rmse = recursive("DEXUSEU", "FRED", 0.5, AIC)
 
 rmse = sqrt ( mean( rmse ^ 2 ) )
 
