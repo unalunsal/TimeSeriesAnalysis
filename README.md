@@ -3,9 +3,8 @@
 I am assuming you already have some background in regression analysis / econometrics with some R programming experience. 
 
 # arima.aic.R
-In this code, I will be forecasting recursive out of sample test set by using optimum ARIMA(p,d,q) orders while minimizing Akaike Information Criterion. 
-
-I determine the optimum order for the ARIMA(p,d,q) by minimizing Information Creterion from the traning set then I use the model to make a  forecast for one period ahead. For each period up to time t, I determine the orders of the ARIMA(p,d,q) with Information Creterion and use that model to forecast the observation at time t+1. This methodology is called recursive out of sample forecasting. 
+In this code, I will be forecasting recursive out of sample test set by using optimum ARIMA(p,d,q). 
+It determines the optimum order for the ARIMA(p,d,q) by minimizing Akaike Information Creterion (AIC) from the traning set then it uses the model to make a  forecast for one period ahead. For each period up to time t, it determines the orders of the ARIMA(p,d,q) by minimizing the Akaike Information Creterion (AIC) and uses that model to forecast the observation at time t+1. This methodology is called recursive out of sample forecasting. 
 
 All you need to do is changing the parameters in the recursive funtion call. 
 As an example, 
@@ -13,7 +12,7 @@ As an example,
 recursive("DEXUSEU", "FRED", 0.5, AIC)
 
 Calls the U.S. Dollar / Euro time series data from the FRED database which is publicly available data from the St. Louis FED. 
-It seperates the data series into training and test sets at the ratio of 50% and by using only training set, it determines the optimum ARIMA(p,d,q) order while minimizing Akaike Information Criterion (AIC). Once it finds out the optimum orders for the ARIMA(p,d,q), it forecasts the first observation in the test set.
+It seperates the data series into training and test sets at the ratio of 50% and by only using the training set, it determines the optimum ARIMA(p,d,q) order while minimizing Akaike Information Criterion (AIC). Once it finds out the optimum orders for the ARIMA(p,d,q), it forecasts the first observation in the test set.
 Then it updates the traning and test sets by adding one observation to the traning set from test set. It recalculates the optimum ARIMA(p,d,q) order for the new traning set and then by using the new ARIMA(p,d,q), it forecasts the first observation in the new test set.
 Algorithm will keep doing the same thing until there is no observation left to add from the test set to the training set. 
 
