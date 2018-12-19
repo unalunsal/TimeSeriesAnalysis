@@ -36,10 +36,10 @@ orderSelect <- function(df.train,infoCrea){
 # Function that calculates the out of sample recursive RMSE value.
 # SYMBOL: First Component of the function is the symbol for the time series data which will be retrieved from the SOURCE. 
 # SOURCE: Second Componenet of the function which is the data source (E.g. FRED, YAHOO). 
-# testRatio: Third Component of the function which the train set / test set ratio (E.g. testRatio = 0.5)
+# testRatio: Third Component of the function and it is the train set / test set ratio (E.g. testRatio = 0.5). 
 # infoCrea: Information criteria that will be used to choose optimum lags for the ARMA(p,q)-GARCH(m.n) model 
-#           (E.g. infoCrea = 1 means Akaike Information Criterion (AIC) will be used to determine the optimum ARMA(p,q)-GARCH(m,n) parameters)
-#                 infoCrea = 2 means Bayesian Information Criterion (BIC) will be used to determine the optimum ARMA(p,q)-GARCH(m,n) parameters). 
+#           (E.g. infoCrea = 1 means Akaike Information Criterion (AIC) will be used to determine the optimum ARMA(p,q)-GARCH(m,n) order)
+#                 infoCrea = 2 means Bayesian Information Criterion (BIC) will be used to determine the optimum ARMA(p,q)-GARCH(m,n) order). 
 
 recursive <- function(SYMBOL, SOURCE,testRatio, infoCrea) {
   
