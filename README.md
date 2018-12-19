@@ -1,8 +1,8 @@
-# Time Series Analysis using R 
+## Time Series Analysis using R 
 
 I am assuming you already have some background in regression analysis / econometrics with some R programming experience. 
 
- ARIMA(p,d,q).AIC.R
+# ARIMA(p,d,q).AIC.R
 This code forecasts recursive out of sample test set by using optimum ARIMA(p,d,q). 
 It determines the optimum order for the ARIMA(p,d,q) by minimizing Akaike Information Creterion (AIC) from the traning set then it uses the model to make a  forecast for one period ahead. For each period up to time t, it determines the orders of the ARIMA(p,d,q) by minimizing the Akaike Information Creterion (AIC) and uses that model to forecast the observation at time t+1. This methodology is called recursive out of sample forecasting. 
 
