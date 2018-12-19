@@ -2,7 +2,7 @@
 
 I am assuming you already have some background in regression analysis / econometrics with some R programming experience. 
 
-# arima.aic.R
+# ARIMA(p,d,q).AIC.R
 This code forecasts recursive out of sample test set by using optimum ARIMA(p,d,q). 
 It determines the optimum order for the ARIMA(p,d,q) by minimizing Akaike Information Creterion (AIC) from the traning set then it uses the model to make a  forecast for one period ahead. For each period up to time t, it determines the orders of the ARIMA(p,d,q) by minimizing the Akaike Information Creterion (AIC) and uses that model to forecast the observation at time t+1. This methodology is called recursive out of sample forecasting. 
 
@@ -21,7 +21,7 @@ These constraints on the ARIMA(p,d,q) orders can be changed from the function or
 
 Thanks. 
 
-# arima.bic.R 
+# ARIMA(p,d,q).BIC.R 
 This algorithm is exact replica of the arima.aic.R. I added this just to show how easy it is to update the arima.aic.R parameters. 
 In this code, I am following the same logic with arima.aic.R but this time, I am choosing the ARIMA(p,d,q) orders by minimizing the Bayesian Information Criterion (BIC). All I did was updating the parameters in the recursive function call. 
 
