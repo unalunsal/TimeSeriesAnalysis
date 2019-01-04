@@ -17,7 +17,7 @@ orderSelect <- function(df.train,infoCrea){
   final.ic = Inf
   final.order.ic = c(0,0,0,0)
   for (m in 0:1) for (n in 0:1) for (p in 0:3) for (q in 0:3) {
-    spec = ugarchspec(variance.model=list(model="eGARCH",garchOrder=c(m,n)),
+    spec = ugarchspec(variance.model=list(model="iGARCH",garchOrder=c(m,n)),
                         mean.model=list(armaOrder=c(p, q), include.mean=T),distribution.model="std")
     mod = ugarchfit(spec, diff(diff(df.train)), solver = "hybrid")
     current.ic = infocriteria(mod)[infoCrea]
