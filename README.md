@@ -29,6 +29,6 @@ recursive("DEXUSEU", "FRED", 0.5, BIC)
 
 Thanks. 
 
-
+# ARMA(p,q)-GARCH(m,n).AIC.R 
 
 
