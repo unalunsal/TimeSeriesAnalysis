@@ -30,5 +30,9 @@ recursive("DEXUSEU", "FRED", 0.5, BIC)
 Thanks. 
 
 # ARMA(p,q)-GARCH(m,n).AIC.R 
+I am following the same logic for the model order selection which is the same logic with the ARIMA(p,d,q).AIC.R. However, I am introducing the GARCH(m,n) part for the nonconstant variance of the innovations (error terms) of the model. It is really common to have heteroskadasticity in time series data and therefore, it is a good practice to control for it. I added the GARCH(m,n) orders and the algorithm loops through different ARMA(p,q)-GARCH(m,n) orders and picks the one with the lowest AIC and makes prediction for the first observation of the test set. 
 
+recursive("DEXUSEU", "FRED", 0.5, AIC) 
+
+Thanks. 
 
