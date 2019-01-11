@@ -34,6 +34,8 @@ For the model order selection, I am following the same logic with the ARIMA(p,d,
 
 recursive("DEXUSEU", "FRED", 0.5, 1) 
 
+Thanks. 
+
 # ARMA(p,q)-GARCH(m,n).BIC.R 
 This code is the same as the ARMA(p,q)-GARCH(m,n).AIC.R. I added this just to show that how easy it is to update the ARMA(p,q)-GARCH(m,n).AIC.R. 
 The only difference is in the recursive() function call and the optimum model orders for the ARMA(p,q)-GARCH(m,n) is determined by the Bayesian Information Criterion (BIC). Which is updated with the fourth element of the recursive function (2), it used to be 1 which represents the AIC. 
