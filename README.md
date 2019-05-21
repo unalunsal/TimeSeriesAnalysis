@@ -48,7 +48,7 @@ Thanks.
 With these two scripts, I am following the same logic with ARMA(p,q)-GARCH(m,n) but this time I am solving for the Exponential version of the variance of the error term. EGACRH models are within GARCH model family and I strongly recommend using them in your analysis since, implementation through R is pretty straightforward. 
 
 # ARMA(p,q)-IGARCH(m,n).AIC.R & ARMA(p,q)-IGARCH(m,n).BIC.R
-This script is almost identical with others except with these two, I am solving for IGARCH models. 
+These two scripts are almost identical with others except with these two, I am solving for IGARCH models. 
 
 Please feel free to reach out to me if you see any errors. 
 
