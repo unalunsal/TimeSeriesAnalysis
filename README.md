@@ -50,7 +50,7 @@ With these two scripts, I am following the same logic with ARMA(p,q)-GARCH(m,n) 
 # ARMA(p,q)-IGARCH(m,n).AIC.R & ARMA(p,q)-IGARCH(m,n).BIC.R
 These two scripts are almost identical with others except with these two, I am solving for IGARCH models. 
 
-Please feel free to reach out to me if you see any errors. 
+If you see any errors, please feel free to reach out me. 
 
 Thanks!
 
