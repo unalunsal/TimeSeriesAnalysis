@@ -44,3 +44,5 @@ recursive("DEXUSEU", "FRED", 0.5, 2)
 
 Thanks. 
 
+# ARMA(p,q)-EGARCH(m,n).AIC.R & ARMA(p,q)-EGARCH(m,n).BIC.R & ARMA(p,q)-IGARCH(m,n).AIC.R & ARMA(p,q)-IGARCH(m,n).BIC.R
+
