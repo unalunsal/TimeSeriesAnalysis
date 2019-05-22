@@ -44,10 +44,12 @@ recursive("DEXUSEU", "FRED", 0.5, 2)
 
 Thanks. 
 
-# ARMA(p,q)-EGARCH(m,n).AIC.R & ARMA(p,q)-EGARCH(m,n).BIC.R 
+# ARMA(p,q)-EGARCH(m,n).AIC.R 
+# ARMA(p,q)-EGARCH(m,n).BIC.R 
 With these two scripts, I am following the same logic with ARMA(p,q)-GARCH(m,n) but this time I am solving for the Exponential version of the variance of the error term. EGACRH models are within GARCH model family and I strongly recommend using them in your analysis since, implementation through R is pretty straightforward. 
 
-# ARMA(p,q)-IGARCH(m,n).AIC.R & ARMA(p,q)-IGARCH(m,n).BIC.R
+# ARMA(p,q)-IGARCH(m,n).AIC.R 
+# ARMA(p,q)-IGARCH(m,n).BIC.R
 These two scripts are almost identical with others except with these two, I am solving for IGARCH models. 
 
 If you see any errors, please feel free to reach out me. 
